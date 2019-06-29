@@ -1,8 +1,8 @@
-<robot name="pi_robot">
+<robot name="finger1">
 
-	<!-- * * * Link Definitions * * * -->
+	<!-- LINKS -->
 	
- 	<link name="finger1">
+ 	<link name="finger1_1">
 		<visual>
 		    <origin xyz="0 0 0.0225" rpy="0 0 0"/>
 			<geometry>
@@ -14,7 +14,7 @@
 		</visual>	
 	</link>
 	
-	<link name="finger2">
+	<link name="finger1_2">
 		<visual>
 		    <origin xyz="0 0 0.0125" rpy="0 0 0"/>
 			<geometry>
@@ -26,7 +26,7 @@
 		</visual>	
 	</link>
 	
-	<link name="finger3">
+	<link name="finger1_3">
 		<visual>
 		    <origin xyz="0 0 0.01" rpy="0 0 0"/>
 			<geometry>
@@ -38,17 +38,19 @@
 		</visual>	
 	</link>
 
-	<joint name="forearm_palm_joint" type="revolute">
-    	<parent link="finger1"/>
-    	<child link="finger2"/>
+	<!-- JOINTS -->
+
+	<joint name="finger1_1_finger1_2_joint" type="revolute">
+    	<parent link="finger1_1"/>
+    	<child link="finger1_2"/>
     	<origin xyz="0 0 0.045" rpy="0 0 0"/>
     	<axis xyz="0 1 0"/>
     	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>
   	</joint>
 	
-	<joint name="forearm_palm_joint" type="revolute">
-    	<parent link="finger2"/>
-    	<child link="finger3"/>
+	<joint name="finger1_2_finger1_3_joint" type="revolute">
+    	<parent link="finger1_2"/>
+    	<child link="finger1_3"/>
     	<origin xyz="0 0 0.02" rpy="0 0 0"/>
     	<axis xyz="0 1 0"/>
     	<limit lower="-3.1416" upper="3.1416" effort="10" velocity="3"/>

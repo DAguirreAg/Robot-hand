@@ -1,0 +1,160 @@
+# Position controllers ---------------------------------------
+position_controller_forearm_palm_joint:
+  type: position_controllers/JointPositionController
+  joint: forearm_palm_joint
+  pid: {p: 6.00, i: 0.5, d: 0.1}
+  
+position_controller_palm_thumb1_joint:
+  type: position_controllers/JointPositionController
+  joint: palm_thumb1_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+
+position_controller_palm_thumb2_joint:
+  type: position_controllers/JointPositionController
+  joint: palm_thumb2_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+  
+position_controller_palm_finger1_joint:
+  type: position_controllers/JointPositionController
+  joint: palm_finger1_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+
+position_controller_finger1_1_finger1_2_joint:
+  type: position_controllers/JointPositionController
+  joint: finger1_1_finger1_2_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+  
+position_controller_finger1_2_finger1_3_joint:
+  type: position_controllers/JointPositionController
+  joint: finger1_2_finger1_3_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+
+position_controller_palm_finger2_joint:
+  type: position_controllers/JointPositionController
+  joint: palm_finger2_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+  
+position_controller_finger2_1_finger1_2_joint:
+  type: position_controllers/JointPositionController
+  joint: finger2_1_finger1_2_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+
+position_controller_finger2_2_finger2_3_joint:
+  type: position_controllers/JointPositionController
+  joint: finger2_2_finger2_3_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+
+position_controller_palm_finger3_joint:
+  type: position_controllers/JointPositionController
+  joint: palm_finger3_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+  
+position_controller_finger3_1_finger3_2_joint:
+  type: position_controllers/JointPositionController
+  joint: finger3_1_finger3_2_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+  
+position_controller_finger3_2_finger3_3_joint:
+  type: position_controllers/JointPositionController
+  joint: finger3_2_finger3_3_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}  
+
+position_controller_palm_finger4_joint:
+  type: position_controllers/JointPositionController
+  joint: palm_finger4_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+  
+position_controller_finger4_1_finger4_2_joint:
+  type: position_controllers/JointPositionController
+  joint: finger4_1_finger4_2_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+  
+position_controller_finger4_2_finger4_3_joint:
+  type: position_controllers/JointPositionController
+  joint: finger4_2_finger4_3_joint
+  pid: {p: 0.10, i: 0.01, d: 0.001}
+
+ 
+gazebo_ros_control:
+  pid_gains:
+    forearm_palm_joint:
+      p: 6.0
+      i: 0.5
+      d: 0.1
+      
+    palm_thumb1_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001
+
+    palm_thumb2_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001
+      
+    palm_finger1_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001
+
+    finger1_1_finger1_2_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001     
+      
+    finger1_2_finger1_3_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001
+
+    palm_finger2_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001     
+
+    finger2_1_finger1_2_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001
+
+    finger2_2_finger2_3_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001   
+
+    palm_finger3_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001     
+
+    finger3_1_finger3_2_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001
+
+    finger3_2_finger3_3_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001  
+      
+    palm_finger4_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001     
+
+    finger4_1_finger4_2_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001
+
+    finger4_2_finger4_3_joint:
+      p: 0.1
+      i: 0.01
+      d: 0.001        
+
+# Publish all joint states -----------------------------------  
+joint_state_controller:
+  type: joint_state_controller/JointStateController
+  publish_rate: 50
+  
+  

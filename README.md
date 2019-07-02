@@ -1,4 +1,4 @@
-# Robot_hand
+# Robot-hand
 A ROS-Gazebo package to control and simulate a robotic hand.
 <p align="middle">
   <img src="/images/Joystick being played.gif" alt="Joystick being played" height=200>

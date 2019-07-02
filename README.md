@@ -1,11 +1,16 @@
 # Robot_hand
 A ROS-Gazebo package to control and simulate a robotic hand.
-
---- Insert Images ---
-
+<p align="middle">
+  <img src="/images/Joystick being played.gif" alt="Joystick being played" height=200>
+  <img src="/images/Hand doing gestures.gif" alt="Hand doing gestures.gif" height=200>
+</p>
 
 ## Introduction
-The following repository holds a ROS package that simulates a 15DOF robotic hand with some available gestures (more about them later).
+The following repository holds a ROS package that simulates a 15DOF robotic hand with some available gestures. The available hand gestures so far are:
+1. Open hand
+2. Close hand
+3. Thumbs up
+4. Cound down
 
 ## How to get started
 Just follow the next steps:
@@ -47,7 +52,7 @@ The robot hand is composed of **16 links and 15 joints** as seen in below images
 </p>
 
 
-Once everything is setup, the whole result should be the following:
+Once everything is setup, the whole result should be the following (for a more detailed view check [here](https://github.com/DAguirreAg/robot_hand/blob/master/images/Complete%20setup.pdf)):
 <p align="center">
   <img src="images/Complete setup.jpg" width=900><br/>
   <i>Complete ROS setup</i>

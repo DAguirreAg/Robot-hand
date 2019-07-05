@@ -17,7 +17,7 @@ Just follow the next steps:
 
 1. Install the package
 2. Plug in the joystick
-3. Execute `roslaunch setMeUp.launch`
+3. Execute `roslaunch launchMe.launch`
 4. Wait until Gazebo is loaded
 5. Press the joystick's buttons
 6. The hand will start doing some gestures
@@ -30,7 +30,7 @@ There are three main parts you should care look around:
 * launch file: It holds the code that will be executed by roslaunch and it will set up all the nodes and simulation accordingly.
 
 ## Getting into details
-This repository can be divided into two main components, the simulation and the ROS environment. Below code is for a more in-depth explanation, which you shouldn't care about as it is done automatically by the system when using `roslaunch setMeUp.launch`.
+This repository can be divided into two main components, the simulation and the ROS environment. Below code is for a more in-depth explanation, which you shouldn't care about as it is done automatically by the system when using `roslaunch launchMe.launch`.
 
 
 ### ROS enviroment

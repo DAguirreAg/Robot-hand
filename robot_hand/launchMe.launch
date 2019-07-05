@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<launch>
+  <!-- Load the camera_turret URDF model into the parameter server -->
+  <param name="robot_description" textfile="$(find robot_hand)/urdf/robot_hand.urdf"/>
+  
+  <!-- Start Gazebo with an empty world -->
+  <include file="$(find gazebo_ros)/launch/empty_world.launch"/>
+  
+  <!-- Spawn a the camera_turret robot in Gazebo, taking the description from the parameter server -->
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -z 1 -model robot_hand"/>
+  
+  <!-- Load joint controller configurations from YAML file to parameter server -->
+  <rosparam file="$(find robot_hand)/controllers.yaml" command="load"/>
+
+  <!-- Load joint controllers -->
+  <node name="controller_spawner" pkg="controller_manager" type="spawner" args="position_controller_forearm_palm_joint 
+  position_controller_palm_thumb1_joint
+  position_controller_palm_thumb2_joint 
+  position_controller_palm_finger1_joint 
+  position_controller_finger1_1_finger1_2_joint position_controller_finger1_2_finger1_3_joint 
+  position_controller_palm_finger2_joint position_controller_finger2_1_finger1_2_joint 
+  position_controller_finger2_2_finger2_3_joint joint_state_controller
+  position_controller_palm_finger3_joint
+  position_controller_finger3_1_finger3_2_joint
+  position_controller_finger3_2_finger3_3_joint
+  position_controller_palm_finger4_joint
+  position_controller_finger4_1_finger4_2_joint
+  position_controller_finger4_2_finger4_3_joint
+  "/>
+
+  <!-- Load Joy reader and command sender-->
+  <node name="joy_node" pkg="joy" type="joy_node"/>
+
+  <node name="joy_to_handGestures" pkg="robot_hand" type="joy_to_handGestures.py" output="screen">
+    <remap from="command1" to="/position_controller_forearm_palm_joint/command"/>
+    <remap from="command2" to="/position_controller_palm_thumb1_joint/command"/>  
+    <remap from="command3" to="/position_controller_palm_thumb2_joint/command"/>  
+    
+    <remap from="command4" to="/position_controller_palm_finger1_joint/command"/>  
+    <remap from="command5" to="/position_controller_finger1_1_finger1_2_joint/command"/>  
+    <remap from="command6" to="/position_controller_finger1_2_finger1_3_joint/command"/>  
+    
+    <remap from="command7" to="/position_controller_palm_finger2_joint/command"/>  
+    <remap from="command8" to="/position_controller_finger2_1_finger1_2_joint/command"/>  
+    <remap from="command9" to="/position_controller_finger2_2_finger2_3_joint/command"/>  
+    
+    <remap from="command10" to="/position_controller_palm_finger3_joint/command"/>  
+    <remap from="command11" to="/position_controller_finger3_1_finger3_2_joint/command"/>  
+    <remap from="command12" to="/position_controller_finger3_2_finger3_3_joint/command"/> 
+     
+    <remap from="command13" to="/position_controller_palm_finger4_joint/command"/>    
+    <remap from="command14" to="/position_controller_finger4_1_finger4_2_joint/command"/>  
+    <remap from="command15" to="/position_controller_finger4_2_finger4_3_joint/command"/> 
+  </node>
+
+-->
+</launch>
